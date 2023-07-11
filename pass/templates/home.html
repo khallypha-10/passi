@@ -291,10 +291,9 @@
                                 <h3><a href="{% url 'causes-single' cause.slug %}">{{cause.name|capfirst}}</a></h3>
                                 <p>{{cause.description|truncatewords:15}}</p>
                                 {% if cause.initial_price != cause.target_price %}
-                                <a href="{% url 'initiate_payment' %}">Donate</a>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                    Donate
-                                </button>
+                                <a  href="{% url 'initiate_payment' %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                    
+                
                                 {% endif %}
                             </div>
 

@@ -20,7 +20,7 @@
                         <div class="raised-progress">
                             <div class="skillbar-wrap">
                                 <div class="clearfix">
-                                    ${{cause.initial_price}} raised of ${{cause.target_price}}
+                                    ₦{{cause.initial_price}} raised of ₦{{cause.target_price}}
                                 </div>
                                 <div class="skillbar-wrap">
                                         
@@ -38,9 +38,8 @@
                         <h3><a href="{% url 'causes-single' cause.slug%}">{{cause.name}}</a></h3>
                         <p>{{cause.description|truncatewords:15}}</p>
                         {% if cause.initial_price != cause.target_price %}
-                        <div class="btn-wrap">
-                            <a class="btn-primary btn" href="causes-list.html">Donate Now</a>
-                        </div>
+                        <a  href="{% url 'initiate_payment' %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                    
                         {% endif %}
                     </div>
 

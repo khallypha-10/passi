@@ -1,0 +1,92 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+    <!-- Page Breadcrumbs Start -->
+    <section class="breadcrumbs-page-wrap">
+        <div class="bg-fixed pos-rel breadcrumbs-page">
+            <div class="container">
+                <h1>{{event.name|title}}</h1>
+                <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{event.name|title}}</li>
+                    </ol>
+                </nav>  
+            </div>
+        </div>
+    </section>
+    <!-- Page Breadcrumbs End -->
+
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+
+        <!-- About Us Style Start -->
+        <section class="wide-tb-100">
+            <div class="container">
+                <h1 class="heading-main">
+                    <small>Help Us Now</small>
+                    {{event.name|title}}
+                </h1>
+
+                
+            </div>
+
+            
+            <div class="event-single-wrap">
+                <div class="container pos-rel">                
+                    <div class="row">
+                        <div class="col-lg-3 order-lg-last">
+                            <div class="event-single-listing pattern-green">
+                                <h3>{{event.name|title}}</h3>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div><i data-feather="calendar"></i> </div>
+                                        <div>{{event.time|date:"d"}} {{event.time|date:"M"}}</div>
+                                    </li>
+                                    <li>
+                                        <div><i data-feather="clock"></i> </div>
+                                        <div>{{event.time|time:"H:i"}}</div>
+                                    </li>
+                                    <li>
+                                        <div><i data-feather="map-pin"></i> </div>
+                                        <div>{{event.location}}</div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="event-single-listing pattern-orange">
+                                <h3>Organizer</h3>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div><i data-feather="user"></i> </div>
+                                        <div>{{event.organizer.name|title}}</div>
+                                    </li>
+                                    <li>
+                                        <div><i data-feather="phone"></i> </div>
+                                        <div>+234 814 989 9915</div>
+                                    </li>
+                                    <li>
+                                        <div><i data-feather="mail"></i> </div>
+                                        <div><a href="https://mail.google.com/mail/?view=cm&fs=1&to=passifoundation@gmail.com">passifoundation@gmail.com</a></div>
+                                    </li>
+                                                                      
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 offset-lg-1">
+                            <div class="event-single-info">
+                               
+
+                                <p>{{event.description}}</p>
+
+                               
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Us Style Start -->
+
+{% endblock content %}

@@ -1,0 +1,286 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- xxx Basics xxx -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- xxx Change With Your Information xxx -->    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+    <title>Passi Community Development Foundation</title>
+    <meta name="author" content="Mannat Studio">     
+    <meta name="description" content="Gracious is a Responsive HTML5 Template for Charity and NGO related services.">
+    <meta name="keywords" content="Gracious, responsive, html5, charity, charity agency, charity foundation, charity template, church, donate, donation, fundraiser, fundraising, mosque, ngo, non-profit, nonprofit, organization, volunteer">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/images/favicon.ico'%}">
+   
+    <!-- Animate CSSS -->    
+    <link href="{% static 'assets/library/animate/animate.min.css'%}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'assets/library/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- Icofont CSS -->
+    <link href="{% static 'assets/library/icofont/icofont.min.css'%}" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link href="{% static 'assets/library/owlcarousel/css/owl.carousel.min.css'%}" rel="stylesheet">
+    <!-- Select Dropdown CSS -->
+    <link href="{% static 'assets/library/select2/css/select2.min.css'%}" rel="stylesheet">
+    <!-- Magnific Popup CSS -->
+    <link href="{% static 'assets/library/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+    <!-- Main Theme CSS -->
+    <link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+    <!-- Home SLider CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/home-main.css'%}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->		
+</head>
+
+<body>
+     
+
+    <!-- Header Start -->
+    <header>
+        <div class="top-bar-right d-flex align-items-center text-md-left">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col d-flex align-items-center contact-info">
+                        <div>
+                            <i data-feather="phone"></i>+234 814 989 9915</a>
+                        </div>
+                        <div>
+                            <i data-feather="mail"></i>  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=passifoundation@gmail.com">passifoundation@gmail.com</a>
+                        </div>
+                       
+                    </div>
+
+                    <div class="col-md-auto">
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100069220472022&mibextid=LQQJ4d"><i class="icofont-facebook"></i></a>
+                            <a href="https://twitter.com/passifoundation?s=21&t=a6DfOlz68mWDw1jOmRQcHQ"><i class="icofont-twitter"></i></a>
+                            <a href="https://instagram.com/passifoundation?igshid=YmMyMTA2M2Y="><i class="icofont-instagram"></i></a>
+                            <a href="https://wa.me/2348149899915"><i class="fa-brands fa-whatsapp"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Start -->
+        <nav class="navbar navbar-expand-lg header-fullpage">
+            <div class="container text-nowrap">
+                <div class="d-flex align-items-center w-100 col p-0 ">
+                    <a class="navbar-brand rounded-bottom light-bg" href="/">
+                        <img src="{% static 'assets/images/IMG-20221124-WA0004.SVG'%}" alt="">
+                    </a> 
+                </div>
+                <!-- Topbar Buttons Start -->
+                <div class="d-inline-flex request-btn order-lg-last col-auto p-0 align-items-center"> 
+                    
+                    
+
+                    <!-- Toggle Button Start -->
+                    <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Toggle Button End -->  
+                </div>
+                <!-- Topbar Buttons End -->
+                
+                <div class="collapse navbar-collapse" id="navbarCollapse" data-hover="dropdown" data-animations="slideInUp slideInUp slideInUp slideInUp">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <form action="{% url 'search' %}" method="post">
+                                {% csrf_token %}
+                                
+                                    <div class="input-group input-group-sm mb-3">
+                                        <input type="text" class="form-control" placeholder="Search" name="q" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-primary btn-small" style="border: 0cm;" type="submit" id="button-addon2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.1" d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" fill="#323232"/>
+                                            <path d="M15 15L21 21" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#323232" stroke-width="2"/>
+                                            </svg></button>
+                                    </div>
+                                
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'causes-list' %}">Causes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'events' %}">Events</a>
+                        </li>                        
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                        
+                    </ul>
+                    <!-- Main Navigation End -->
+                </div>
+            </div>
+        </nav>
+        <!-- Main Navigation End -->
+    </header>
+    <!-- Header Start -->
+{% block content %}{% endblock content %}
+
+ <!-- Main Footer Start -->
+ <footer class="wide-tb-70 pb-0 mb-spacer-md">
+    <div class="container pos-rel">
+        <div class="row">
+            
+            <div class="give-us-call">
+                <i data-feather="phone"></i>
+                <h4>Give us a call</h4>
+                <h3>+234 814 989 9915</h3>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Column First -->
+            <div class="col-lg-3 col-md-6">
+                <div class="logo-footer">
+                    <img src="{% static 'assets/images/img.png'%}" alt="">
+                </div>
+               
+                <div class="social-icons">
+                    <ul class="list-unstyled list-group list-group-horizontal">
+                           <li> <a href="https://www.facebook.com/profile.php?id=100069220472022&mibextid=LQQJ4d"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/passifoundation?s=21&t=a6DfOlz68mWDw1jOmRQcHQ"><i class="icofont-twitter"></i></a></li>
+                            <li><a href="https://instagram.com/passifoundation?igshid=YmMyMTA2M2Y="><i class="icofont-instagram"></i></a></li>
+                            <li><a href="https://wa.me/2348149899915"><i class="fa-brands fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Column First -->
+
+            <!-- Column Second -->
+            <div class="col-lg-4 col-md-6">
+                <h3 class="footer-heading">Contact Info</h3>
+
+                <div class="footer-widget-contact">
+                    <ul class="list-unstyled">
+                       
+                        <li>
+                            <div><i data-feather="phone"></i> </div>
+                            <div>+234 814 989 9915</div>
+                        </li>
+                        <li>
+                            <div><i data-feather="mail"></i> </div>
+                            <div><a href="mailto:passifoundation@gmail.com">passifoundation@gmail.com</a></div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>                
+            <!-- Column Second -->
+
+            <!-- Spacer For Medium -->
+            <div class="w-100 d-none d-md-block d-lg-none spacer-30"></div>
+            <!-- Spacer For Medium -->
+
+            <!-- Column Third -->
+            <div class="col-lg-2 col-md-6">
+                <h3 class="footer-heading">Explore Us</h3>
+                <div class="footer-widget-menu">
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'about' %}"><i class="icofont-simple-right"></i> <span>About Us</span></a></li>
+                        <li><a href="{% url 'contact' %}"><i class="icofont-simple-right"></i> <span>contact Us</span></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <!-- Column Third -->
+
+            
+        </div>
+    </div>  
+
+    <div class="copyright-wrap">
+        <div class="container pos-rel">
+            <div class="row text-md-start text-center">
+                <div class="col-sm-12 col-md-auto copyright-text">
+                    © Copyright  2023.   |   Created by <a href="https://www.fiverr.com/share/3Yoazx" rel="nofollow">Khallypha_10</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Main Footer End -->
+
+<!-- Search Popup Start -->
+<div class="overlay overlay-hugeinc">    
+    <form class="form-inline mt-2 mt-md-0">
+        <div class="form-inner">
+            <div class="form-inner-div d-inline-flex align-items-center no-gutters">
+                <div class="col-auto">
+                    <i class="icofont-search"></i>
+                </div> 
+                <div class="col">
+                    <input class="form-control w-100 p-0" type="text" placeholder="Search" aria-label="Search">
+                </div>
+                <div class="col-auto">
+                    <a href="#" class="overlay-close link-oragne"><i class="icofont-close-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- Search Popup End -->
+
+<!-- Back To Top Start -->
+<a id="mkdf-back-to-top" href="#" class="off"><i data-feather="corner-right-up"></i></a>
+<!-- Back To Top End -->
+
+<!-- Jquery Library JS -->
+<script src="{% static 'assets/library/jquery/jquery.min.js'%}"></script>
+<!-- Jquery Library JS -->
+<script src="{% static 'assets/library/jquery/jquery.min.js'%}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/library/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<!-- Feather Icon JS -->
+<script src="{% static 'assets/library/feather-icons/feather.min.js'%}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static 'assets/library/owlcarousel/js/owl.carousel.min.js'%}"></script>
+<!-- Select2 Dropdown JS -->
+<script src="{% static 'assets/library/select2/js/select2.min.js'%}"></script>
+<!-- Magnific Popup JS -->
+<script src="{% static 'assets/library/magnific-popup/jquery.magnific-popup.min.js'%}"></script>
+<!-- jflickrfeed Images JS -->
+<script src="{% static 'assets/library/jflickrfeed/jflickrfeed.min.js'%}"></script>
+<!-- Way Points JS -->
+<script src="{% static 'assets/library/jquery-waypoints/jquery.waypoints.min.js'%}"></script>
+<!-- Count Down JS -->
+<script src="{% static 'assets/library/countdown/jquery.countdown.min.js'%}"></script>
+<!-- Appear JS -->
+<script src="{% static 'assets/library/jquery-appear/jquery.appear.js'%}"></script>
+<!-- Jquery Easing JS -->
+<script src="{% static 'assets/library/jquery-easing/jquery.easing.min.js'%}"></script>
+<!-- Counter JS -->
+<script src="{% static 'assets/library/jquery.counterup/jquery.counterup.min.js'%}"></script>
+<!-- Form Validation JS -->
+<script src="{% static 'assets/library/jquery-validate/jquery.validate.min.js'%}"></script>
+<!-- Theme Custom -->
+<script src="{% static 'assets/js/site-custom.js'%}"></script>
+<!-- Home Slider (Only For Home pages) -->
+<script src="{% static 'assets/js/home-slider.js'%}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>

@@ -1,0 +1,803 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Page loader Start -->
+<div id="pageloader">   
+    <div class="loader-item">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+    </div>
+</div>
+<!-- Page loader End -->
+    <!-- Banner Start -->
+    <section class="main-banner">
+        <div class="container start">
+            <div class="slides-wrap">
+                <div class="owl-carousel owl-theme">
+                    <!--/owl-slide-->
+                    <div class="owl-slide d-flex align-items-center cover" style="background-image: url(static/assets/images/slider/alider.jpg);">
+                        <div class="container">
+                            <div class="row justify-content-center justify-content-md-start no-gutters">
+                                <div class="col-10 col-md-6 static">
+                                    <div class="owl-slide-text">
+                                        <h3 class="owl-slide-animated owl-slide-title">Raising Hope</h3>
+                                        <h1 class="owl-slide-animated owl-slide-subtitle">
+                                            To Our Community
+                                        </h1>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/owl-slide-->
+                    
+                    
+                    <!--/owl-slide-->
+                    <div class="owl-slide d-flex align-items-center cover" style="background-image: url(static/assets/images/slider/image0.jpeg);">
+                        <div class="container">
+                            <div class="row justify-content-center justify-content-md-start no-gutters">
+                                <div class="col-10 col-md-6 static">
+                                    <div class="owl-slide-text">
+                                        <h3 class="owl-slide-animated owl-slide-title">Raising Hope</h3>
+                                        <h1 class="owl-slide-animated owl-slide-subtitle">
+                                            To Our Community
+                                        </h1>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--/owl-slide-->
+                    <div class="owl-slide d-flex align-items-center cover" style="background-image: url(static/assets/images/slider/image1.jpeg);">
+                        <div class="container">
+                            <div class="row justify-content-center justify-content-md-start no-gutters">
+                                <div class="col-10 col-md-6 static">
+                                    <div class="owl-slide-text">
+                                        <h3 class="owl-slide-animated owl-slide-title">Raising Hope</h3>
+                                        <h1 class="owl-slide-animated owl-slide-subtitle">
+                                            To Our Community
+                                        </h1>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/owl-slide-->
+                </div>
+                
+            </div>
+            <div class="container pos-rel">
+                <div class="funds-committed">
+                    <small>Total Funds Committed</small>
+                    <span class="counter">{{total}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Start -->
+
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+
+        <!-- Welcome Home Style Start -->
+        <section class="wide-tb-100 pb-0">
+            <div class="container">
+                <div class="row">                    
+                    <div class="col-lg-5 col-md-12">
+                        <h1 class="heading-main">
+                            <small>Welcome To PCDF</small>
+                            Your Help is Invaluable
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wide-tb-100 bg-green pt-0 welcome-broke-grid">
+
+            <div class="container">
+                <div class="welcome-icon"><i class="charity-love_hearts"></i></div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <!-- Icon Boxes Image Style -->
+                        <div class="icon-box-with-img">                                                        
+                            <div class="img">
+                                <img src="{% static 'assets/images/causes3.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <h3>Committee on Creativity & Empowerment</h3>
+                                <p>
+                                    Whether via art-making, creative thinking, or both, you may break free...
+                                    <br>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a class="btn btn-outline-secondary btn-sm me-md-2" data-bs-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false" aria-controls="collapseExample">Read more..</a>
+                                    </div>
+                                    
+                                    
+                                </p>
+                                <div class="row">
+                                    
+                                      <div class="collapse multi-collapse" id="collapseExample7">
+                                        <div class="icon-box">
+                                            of ingrained habits, gain clarity, and bring about the change you want in your life and in yourself. The ability to make decisions is what it is about. Deep listening, reflective feedback, perceptive questioning, and the possibility of introducing creative tasks are all practices I use. Although there are as many issues to work on and solve as there are issues, the PCDF committee on innovation and empowerment is employing and promoting skillful methods to address them.                                        </div>
+                                      </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Boxes Image Style -->
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <!-- Icon Boxes Image Style -->
+                        <div class="icon-box-with-img">                            
+                            <div class="img">
+                                <img src="{% static 'assets/images/hausa3.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <h3>Committee on Art, Cultural & Architectural Conservation</h3>
+                                <p>
+                                    The committee focuses on protection and care of tangible cultural heritage,...
+                                    <br>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a class="btn btn-outline-secondary btn-sm me-md-2" data-bs-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample">Read more..</a>
+                                    </div>
+                                    
+                                    
+                                </p>
+                                <div class="row">
+                                    
+                                      <div class="collapse multi-collapse" id="collapseExample6">
+                                        <div class="icon-box">
+                                            including artworks, architecture, infrastructure, and museum collections. Conservation activities include preventive conservation, examination, documentation, research, treatment, and education.                                        </div>
+                                      </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Boxes Image Style -->
+                    </div>
+
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 d-none d-sm-none d-md-block d-lg-none spacer-60"></div>
+                    <!-- Spacer For Medium -->
+
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <!-- Icon Boxes Image Style -->
+                        <div class="icon-box-with-img">  
+                            <div class="img">
+                                <img src="{% static 'assets/images/causes5.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <h3>Committee on Sanitary Measures, Food & Shelter</h3>
+                                <p>
+                                    Everyone has the right to an adequate standard of living, which...
+                                    <br>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <a class="btn btn-outline-secondary btn-sm me-md-2" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample">Read more..</a>
+                                    </div>
+                                    
+                                    
+                                </p>
+                                <div class="row">
+                                    
+                                      <div class="collapse" id="collapseExample5">
+                                        <div class="icon-box">
+                                            includes food, clothing, housing, medical care, and necessary social services.They also have the right to security in the event of unemployment, illness, disability, widowhood, old age, or other lack of livelihood due to factors beyond their control.                                        </div>
+                                      </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Boxes Image Style -->
+                    </div>
+                    
+
+                    
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-7 mx-auto welcome-home-first">
+                        
+
+                        <div class="row my-5">                      
+                            <!-- Map Icons Start -->
+                            <div class="col-sm-6 col-sm-6 mb-sm-0">
+                                <div class="icon-box-1">
+                                    <i class="charity-volunteer_people"></i>
+                                    <div class="text">
+                                        <h3>50 <br> <span class="txt-black">Volunteers</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Map Icons Start -->
+
+                            <!-- Map Icons Start -->
+                            <div class="col-sm-6">
+                                <div class="icon-box-1">
+                                    <i class="charity-donate_money"></i>
+                                    <div class="text">
+                                        <h3>₦{{total}} <br> <span class="txt-black">Trusted Funds</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Map Icons Start -->
+                        </div>      
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Welcome Home Style Start -->
+
+     
+
+        <!-- Causes Grid Start -->
+        <section class="wide-tb-100">
+            <div class="container">
+                
+                <div class="row justify-content-between align-items-end">
+                    <div class="col-lg-4 col-md-6">
+                        <h1 class="heading-main">
+                            <small>Help Us Now</small>
+                            Some Of Our Causes
+                        </h1>
+                    </div>
+                    <div class="col-lg-8 col-md-6 text-md-right btn-team">
+                        <a href="{% url 'causes-list'%}" class="btn btn-outline-dark">View All Causes</a>
+                    </div>
+                </div>
+                <div class="row">      
+                    {% for cause in causess  %}     
+                    
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- Causes Wrap -->
+                        <div class="causes-wrap">
+                            <div class="img-wrap">
+                                <a href="{% url 'causes-single' cause.slug %}"><img src={{cause.image.url}} alt=""></a>
+                                <div class="raised-progress">
+                                    <div class="skillbar-wrap">
+                                        <div class="clearfix">
+                                            ₦{{cause.initial_price}} raised of ₦{{cause.target_price}}
+                                            <div class="skillbar-wrap">
+                                                
+                                                <div class="skillbar" data-percent="{{cause.skill}}%">
+                                                    
+                                                    <div class="skillbar-bar"></div>
+                                                </div>             
+                                            </div>
+                                        </div>
+                                                   
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-wrap">
+                                <span class="tag">{{cause.category}}</span>
+                                <h3><a href="{% url 'causes-single' cause.slug %}">{{cause.name|capfirst}}</a></h3>
+                                <p>{{cause.description|truncatewords:15}}</p>
+                                {% if cause.initial_price != cause.target_price %}
+                                <a href="{% url 'initiate_payment' %}">Donate</a>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                    Donate
+                                </button>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        <!-- Causes Wrap -->
+                    </div>
+                    
+                    {% endfor %} 
+                    
+
+                    
+
+                </div>
+            </div>
+        </section>
+        <!-- Causes Grid Start -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel1">Donation</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Callout Style Start -->
+        <section class="wide-tb-100 bg-scroll bg-img-6 pos-rel callout-style-1">
+            <div class="bg-overlay blue opacity-80"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h1 class="heading-main light-mode">
+                            <small>Help Other People</small>
+                            We Dream of Creating a Bright Future for Underprivileged Children
+                        </h1>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+        <!-- Callout Style End -->
+
+        <!-- Get to Know Us Style Start -->
+        <section class="wide-tb-100 bg-white mb-spacer-md">
+            <div class="container">
+                <div class="row">                    
+                    <div class="col-lg-5 col-md-12">
+                        <h1 class="heading-main">
+                            <small>Get to Know Us</small>
+                            Get to Know Who We Are 
+                        </h1>
+
+                        <p>We would like to come together and help our community in however we can. Please join us in making a difference.</p>
+
+                        <!-- Animated Skillbars Start -->
+                        
+                        <!-- Animated Skillbars Start -->
+
+                        <!-- Animated Skillbars Start -->
+                        
+                        <!-- Animated Skillbars Start -->
+                    </div>
+                    
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 d-none d-sm-block d-lg-none spacer-60"></div>
+                    <!-- Spacer For Medium -->
+
+                    <div class="col-lg-7 col-md-12">
+                        <!-- Theme Tabbing Style -->
+                        <ul class="nav nav-pills theme-tabbing mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-mission-tab" data-toggle="pill" href="#pills-mission" role="tab" aria-controls="pills-mission" aria-selected="true">Mission</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-vision-tab" data-toggle="pill" href="#pills-vision" role="tab" aria-controls="pills-vision" aria-selected="false">Our Vision</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-history-tab" data-toggle="pill" href="#pills-history" role="tab" aria-controls="pills-history" aria-selected="false">Our History</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content theme-tabbing" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-mission" role="tabpanel" aria-labelledby="pills-mission-tab">                                
+                                <div class="row align-items-center">
+                                    <div class="col-md-7">
+                                        <div class="about-img-small">
+                                            <img src="{% static 'assets/images/image1.jpeg'%}" class="about-us-2" alt="">
+                                            <div class="since-year">
+                                                <span>Since</span>
+                                                2020
+                                                
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-5">
+                                        <ul class="list-unstyled icons-listing theme-orange mb-0">
+                                            <li>Provide basic amenities necessary for a community to flourish.</li>
+                                            <li>Uphold the greatest standards and morals.</li>
+                                            <li>Transparency in community and in our activities.</li>
+                                            <li>We also strive to protect traditional, cultural and architectural crafts.</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-vision" role="tabpanel" aria-labelledby="pills-vision-tab">
+                                <div class="row align-items-center">
+                                    <div class="col-md-7">
+                                        <div class="about-img-small">
+                                            <img src="{% static 'assets/images/image0.jpeg'%}" class="about-us-2" alt="">
+                                            <div class="since-year">
+                                                <span>Since</span>
+                                               2020
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-5">
+                                        <ul class="list-unstyled icons-listing theme-orange mb-0">
+                                            <li>Create a happy, educated and self-sustaining community.</li>
+                                            <li>Raise the next generation with a bright future..</li>
+                                            <li>Preserve our heritage and culture.</li>
+                                            <li>Provide peace and comfort for our community.</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-history" role="tabpanel" aria-labelledby="pills-history-tab">
+                                <div class="row align-items-center">
+                                    <div class="col-md-7">
+                                        <div class="about-img-small">
+                                            <img src="{% static 'assets/images/image2.jpeg'%}" class="about-us-2" alt="">
+                                            <div class="since-year">
+                                                <span>Since</span>
+                                                2020
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-5">
+                                        <ul class="list-unstyled icons-listing theme-orange mb-0">
+                                            <li>We have helped fed hundreds of people across Northern Nigeria.</li>
+                                            <li>We have delivered aid to children.</li>
+                                            <li>Our organization has helped prserve some artifacts.</li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Theme Tabbing Style -->
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Get to Know Us Style End -->
+
+        <!-- Team Member Style Start -->
+        <section class="wide-tb-100  mb-spacer-md">
+            <div class="container">
+                <div class="row justify-content-between align-items-end">
+                    <div class="col-lg-4 col-md-6">
+                        <h1 class="heading-main">
+                            <small>Team</small>
+                            Our Members
+                        </h1>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <!-- Team Column One -->
+                    {% for profile in profiles  %}
+                    <div class="col-12 col-lg-3 col-sm-6">
+                        <div class="team-section-wrap mb-0">
+                            <div class="img green">
+                                
+                                <img src={{profile.image.url}} alt="" class="rounded-circle">
+                            </div>
+                            <h4>{{profile.name|title}}</h4>
+                            <h5>{{profile.position}}</h5>
+                            
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Team Column One -->
+
+                   
+
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 d-none d-sm-block d-lg-none spacer-60"></div>
+                    <!-- Spacer For Medium -->
+
+                   
+
+                    
+                </div>
+            </div>
+        </section>
+        <!-- Team Member Style End -->
+
+        <!-- Faq's Style Start -->
+        <section class="wide-tb-100 pattern-orange pt-0 mb-spacer-md">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        
+                        <div class="faqs-wrap pos-rel">
+                            <div class="bg-overlay blue opacity-80"></div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 col-md-12">
+                                    <h1 class="heading-main light-mode">
+                                        <small>Have Questions</small>
+                                        Frequently Asked Questions
+                                    </h1>
+                                    <p>Don't hesitate to reach out to us.</p>
+                                    <a class="btn btn-default" href="{% url 'contact' %}">Ask It Now</a>
+                                </div>
+        
+                                <!-- Spacer For Medium -->
+                                <div class="w-100 d-none d-sm-block d-lg-none spacer-60"></div>
+                                <!-- Spacer For Medium -->
+        
+                                <div class="col-12 col-lg-6 col-md-12">
+                                    <div class="theme-collapse light">
+                                        <!-- Toggle Links 1 -->
+                                        <div class="toggle arrow-down">
+                                            <span class="icon">
+                                                <i class="icofont-plus"></i>
+                                            </span> What does PCDF stand for?
+                                        </div>
+                                        <!-- Toggle Links 1 -->
+                
+                                        <!-- Toggle Content 1 -->
+                                        <div class="collapse show">
+                                            <div class="content">
+                                               Passi Community Development Foundation
+                                            </div>
+                                        </div>
+                                        <!-- Toggle Content 1 -->
+                
+                                        <!-- Toggle Links 2 -->
+                                        <div class="toggle">
+                                            <span class="icon">
+                                                <i class="icofont-plus"></i>
+                                            </span> What is PCDF about and how can I join?
+                                        </div>
+                                        <!-- Toggle Links 2 -->
+                
+                                        <!-- Toggle Content 2 -->
+                                        <div class="collapse">
+                                            <div class="content">
+                                                PCDF is a non-governmental organization that focuses primarily on bringing new opportunities that would lead to real and lasting change in our communities while maintaining the highest standards and transparency possible within our community. You can reach us on; <div class="social-icons " style="color: aqua;">
+                                                    <a href="https://www.facebook.com/profile.php?id=100069220472022&mibextid=LQQJ4d"><i class="icofont-facebook" style="color: aqua;"></i></a>
+                                                    <a href="https://twitter.com/passifoundation?s=21&t=a6DfOlz68mWDw1jOmRQcHQ"><i class="icofont-twitter" style="color: aqua;"></i></a>
+                                                    <a href="https://instagram.com/passifoundation?igshid=YmMyMTA2M2Y="><i class="icofont-instagram" style="color: aqua;"></i></a>
+                                                    <a href="https://wa.me/2348149899915"><i class="fa-brands fa-whatsapp" style="color: aqua;"></i></a>
+                                                    <div style="color: aqua;">
+                                                        <i data-feather="mail"></i><a style="color: aqua;" href="https://mail.google.com/mail/?view=cm&fs=1&to=passifoundation@gmail.com">Email</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Toggle Content 2 -->
+                
+                                        <!-- Toggle Links 3 -->
+                                        <div class="toggle">
+                                            <span class="icon">
+                                                <i class="icofont-plus"></i>
+                                            </span> How do I donate?
+                                        </div>
+                                        <!-- Toggle Links 3 -->
+                
+                                        <!-- Toggle Content 3 -->
+                                        <div class="collapse">
+                                            <div class="content">
+                                                Currently we are undergoing registration with the CAC so we will not be accepting any form of cash donation. But we are open to other forms of donations, including; clothings, home appliances and others. Thank you for your understanding.
+                                            </div>
+                                        </div>
+                                        <!-- Toggle Content 3 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex align-items-center">
+                    <!-- Counter Col Start -->
+                    <div class="col col-12 col-lg-3 col-sm-6">
+                        <div class="counter-style-box">
+                            <div class="counter-txt"><span class="counter">{{cause}}</span>+</div>
+                            <div>Causes</div>
+                        </div>
+                    </div>
+                    <!-- Counter Col End -->
+
+                    <!-- Counter Col Start -->
+                    <div class="col col-12 col-lg-3 col-sm-6">
+                        <div class="counter-style-box">               
+                            <div class="counter-txt"><span class="counter">{{total}}</span>+</div>
+                            <div>Money Raised</div>
+                        </div>
+                    </div>
+                    <!-- Counter Col End -->
+
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 d-none d-sm-block d-lg-none spacer-60"></div>
+                    <!-- Spacer For Medium -->
+
+                    <!-- Counter Col Start -->
+                    <div class="col col-12 col-lg-3 col-sm-6">
+                        <div class="counter-style-box">
+                            <div class="counter-txt"><span class="counter">50</span>+</div>
+                            <div>Dedicated Volunteers</div>
+                        </div>
+                    </div>
+                    <!-- Counter Col End -->
+
+                    <!-- Counter Col Start -->
+                    <div class="col col-12 col-lg-3 col-sm-6">
+                        <div class="counter-style-box">     
+                            <div class="counter-txt"><span class="counter">{{people}}</span>+</div>
+                            <div>People Helped</div>
+                        </div>
+                    </div>
+                    <!-- Counter Col End -->
+                </div>
+            </div>
+        </section>
+        <!-- Faq's Style End -->
+        
+        <!-- Team Member Style Start -->
+        <section class="wide-tb-100">
+            <div class="container">
+                <div class="row justify-content-between align-items-end">
+                    <div class="col-lg-6 col-md-8">
+                        <h1 class="heading-main">
+                            <small>Join Us</small>
+                            Reach Out & Help Us With Our Events
+                        </h1>
+                        
+                    </div>
+                   
+                </div>
+                <div class="col-lg-8 col-md-6 text-md-right btn-team">
+                    <a href="{% url 'events'%}" class="btn btn-outline-dark">View Our Other Events</a>
+                </div>
+                <div class="row">
+                    
+
+                    <!-- Spacer For Medium -->
+                    <div class="w-100 d-none d-sm-none d-lg-none spacer-60 d-md-block"></div>
+                    <!-- Spacer For Medium -->
+                    
+                    <div class="col-lg-6">
+                        <div class="row h-100">
+                            
+                            
+                            <div class="col-12 mb-5">
+                                <div class="event-wrap-single">
+                                    <div class="date-wrap d-md-flex align-items-start">
+                                        <div class="date-box">
+                                            {{upcoming.time|date:"d"}} <span>{{upcoming.time|date:"M"}}</span>
+                                        </div>
+                                        <div class="event-details">
+                                            <div class="mb-3">
+                                                <span class="mr-3"><i data-feather="clock"></i> {{upcoming.time|time:"H:i"}}</span> <i data-feather="map-pin"></i> {{upcoming.location|capfirst}}
+                                            </div>
+                                            <h3><a href="{% url 'event' upcoming.slug %}">{{upcoming.name|title}}</a></h3>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <p>
+                                        {{upcoming.description|truncatewords:15}}
+                                       <br><br>
+                                       <div class="text-md-right read-more-wrap">
+                                
+                                        <a href="{% url 'event' upcoming.slug %}" class="read-more-line"><span>Read More</span></a>
+                                    </div>
+                                       
+                                      </p>
+                                      
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- Team Member Style End -->
+
+        <!-- Testimonials Style Start -->
+        <section class="wide-tb-100 bg-white">
+            <div class="container">
+                <h1 class="heading-main">
+                    <small>Our Testimonials</small>
+                    What People Say
+                </h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme" id="home-client-testimonials">
+                        
+                            <!-- Client Testimonials Slider Item -->
+                            <div class="item">
+                                <div class="client-testimonial dark">
+                                    <div class="client-inner-content">
+                                        <i class="charity-quotes"></i>
+                                        <p>Your organization was the first to aid our community without any political intentions.</p>
+                                    </div>
+                                    <div class="client-testimonial-icon">
+                                        
+                                        <div class="text">
+                                            <div class="name">The inhabitants of Uguwan Bolewa Local Government Area </div>
+                                            <div class="post">Yobe State, Nigeria</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Client Testimonials Slider Item -->
+                        
+                            <!-- Client Testimonials Slider Item -->
+                            <div class="item">
+                                <div class="client-testimonial dark">
+                                    <div class="client-inner-content">
+                                        <i class="charity-quotes"></i>
+                                        <p>After spending time working with PCDF Management & Volunteers, I can certainly say it was an interesting experience for a non-profit organization to require its team to be versatile and ready to help find solutions to anything!
+
+                                            </p>
+                                    </div>
+                                    <div class="client-testimonial-icon">
+                                        
+                                        <div class="text">
+                                            <div class="name">Al-Amir Suleyman</div>
+                                            <div class="post">Resident, Yobe.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Client Testimonials Slider Item -->
+                        
+                            <!-- Client Testimonials Slider Item -->
+                            <div class="item">
+                                <div class="client-testimonial dark">
+                                    <div class="client-inner-content">
+                                        <i class="charity-quotes"></i>
+                                        <p>We have certainly been blessed and we thank you for your effort. May your effort be rewarded.</p>
+                                    </div>
+                                    <div class="client-testimonial-icon">
+                                        
+                                        <div class="text">
+                                            <div class="name">Inhabitants</div>
+                                            <div class="post">Kebbi State</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Client Testimonials Slider Item -->
+                        
+                            <!-- Client Testimonials Slider Item -->
+                            <div class="item">
+                                <div class="client-testimonial dark">
+                                    <div class="client-inner-content">
+                                        <i class="charity-quotes"></i>
+                                        <p>We are eternally grateful for coming to our aid when no one bothered to help.</p>
+                                    </div>
+                                    <div class="client-testimonial-icon">
+                                        
+                                        <div class="text">
+                                            <div class="name">Inhabitants</div>
+                                            <div class="post">Kogi State</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Client Testimonials Slider Item -->
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Style End -->          
+
+     
+        
+<script src="https://js.paystack.co/v1/inline.js"></script>
+{% endblock content %}
+
+   

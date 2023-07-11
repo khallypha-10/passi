@@ -1,0 +1,197 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Donation</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <h3>Account Name: Abubakar Abubakar </h3>
+            <h3>Bank Name: Access Bank </h3>
+            <h4>Account Number: 1223118169 </h4>
+            
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Page Breadcrumbs Start -->
+    <section class="breadcrumbs-page-wrap">
+        <div class="bg-fixed pos-rel breadcrumbs-page">
+            <div class="container">
+                <h1>Explore Causes</h1>
+                <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Explore Causes</li>
+                    </ol>
+                </nav>  
+            </div>
+        </div>
+    </section>
+    <!-- Page Breadcrumbs End -->
+    
+   
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+
+        <!-- Causes Grid Start -->
+        
+        <section class="wide-tb-100">
+            <div class="container">
+                <h1 class="heading-main">
+                    <small>Help Us Now</small>
+                    Our Causes
+                </h1>
+                
+                <div class="row">     
+                    
+                    {% for cause in causes %}   
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- Causes Wrap -->
+                        <div class="causes-wrap">
+                            <div class="img-wrap">
+                                <a href="{% url 'causes-single' cause.slug %}"><img src={{cause.image.url}} alt=""></a>
+                                <div class="raised-progress">
+                                    <div class="skillbar-wrap">
+                                        <div class="clearfix">
+                                            ₦{{cause.initial_price}} raised of ₦{{cause.target_price}}
+                                        </div>
+                                        <div class="skillbar-wrap">
+                                                
+                                            <div class="skillbar" data-percent="{{cause.skill}}%">
+                                                
+                                                <div class="skillbar-bar"></div>
+                                            </div>             
+                                        </div>           
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-wrap">
+                                <span class="tag">{{cause.category}}</span>
+                                <h3><a href="{% url 'causes-single' cause.slug%}">{{cause.name|title}}</a></h3>
+                                <p>{{cause.description|truncatewords:15}}</p>
+                                {% if cause.initial_price != cause.target_price %}
+                                <div class="btn-wrap">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Donate
+                                    </button>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        <!-- Causes Wrap -->
+                    </div>
+                    {% endfor %}
+                    
+                    
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center"> {% if causes.has_previous %}
+                      <li class="page-item"><a class="page-link" href="?page={{causes.previous_page_number}}">Previous</a></li>{% endif %}
+                      {% for page in causes.paginator.page_range %}
+                      <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                      {% endfor %}
+                      {% if causes.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{causes.next_page_number}}">Next</a></li>{% endif %}
+                    </ul>
+                </nav>
+            </div>
+            
+        </section>
+        <!-- Causes Grid Start -->
+
+        
+
+        <!-- Faq's Style Start -->
+        <section class="wide-tb-100 feautred-faqs pb-0">
+            <div class="container">
+                <div class="pos-rel faqs-wrap">
+                    <div class="bg-overlay blue opacity-80"></div>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-12">
+                            <h1 class="heading-main light-mode">
+                                <small>Have Questions</small>
+                                Frequently Asked Questions
+                            </h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                            <a class="btn btn-default" href="our-faqs.html">Ask It Now</a>
+                        </div>
+
+                        <!-- Spacer For Medium -->
+                        <div class="w-100 d-none d-sm-block d-lg-none spacer-60"></div>
+                        <!-- Spacer For Medium -->
+
+                        <div class="col-12 col-lg-6 col-md-12">
+                            <div class="theme-collapse light">
+                                <!-- Toggle Links 1 -->
+                                <div class="toggle arrow-down">
+                                    <span class="icon">
+                                        <i class="icofont-plus"></i>
+                                    </span> Our Philosophy
+                                </div>
+                                <!-- Toggle Links 1 -->
+        
+                                <!-- Toggle Content 1 -->
+                                <div class="collapse show">
+                                    <div class="content">
+                                        Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.
+                                    </div>
+                                </div>
+                                <!-- Toggle Content 1 -->
+        
+                                <!-- Toggle Links 2 -->
+                                <div class="toggle">
+                                    <span class="icon">
+                                        <i class="icofont-plus"></i>
+                                    </span> Our Organization
+                                </div>
+                                <!-- Toggle Links 2 -->
+        
+                                <!-- Toggle Content 2 -->
+                                <div class="collapse">
+                                    <div class="content">
+                                        Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.
+                                    </div>
+                                </div>
+                                <!-- Toggle Content 2 -->
+        
+                                <!-- Toggle Links 3 -->
+                                <div class="toggle">
+                                    <span class="icon">
+                                        <i class="icofont-plus"></i>
+                                    </span> Know More About Adoption
+                                </div>
+                                <!-- Toggle Links 3 -->
+        
+                                <!-- Toggle Content 3 -->
+                                <div class="collapse">
+                                    <div class="content">
+                                        Donec commodo sodales ex, scelerisque laoreet nibh hendrerit id. In aliquet magna nec lobortis maximus. Etiam rhoncus leo a dolor placerat, nec elementum ipsum convall.
+                                    </div>
+                                </div>
+                                <!-- Toggle Content 3 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Faq's Style End -->
+
+        
+        
+           
+    </main>
+{% endblock content %}

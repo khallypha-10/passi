@@ -1,0 +1,155 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+    <!-- Page loader Start -->
+    <div id="pageloader">   
+        <div class="loader-item">
+            <div class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
+        </div>
+    </div>
+    <!-- Page loader End -->
+
+    {% block content %}
+
+    <!-- Page Breadcrumbs Start -->
+    <section class="breadcrumbs-page-wrap">
+        <div class="bg-fixed pos-rel breadcrumbs-page">
+            <div class="container">
+                <h1>{{causes.name}}</h1>
+                <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{causes.name|title}}</li>
+                    </ol>
+                </nav>  
+            </div>
+        </div>
+    </section>
+    <!-- Page Breadcrumbs End -->
+
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+
+        <!-- About Us Style Start -->
+        <section class="wide-tb-100">
+            <div class="container">
+                <div class="row">                    
+                    <div class="col-lg-9 col-md-12">
+                        <div class="sidebar-spacer">
+                                                    
+                            <h1 class="heading-main">
+                                <small>Help Us Now</small>
+                                {{causes.name|title}}
+                            </h1>
+                            <!-- Causes Single Wrap -->
+                            <div class="causes-wrap single">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img src={{causes.image.url}} class="d-block w-100" alt="...">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src={{causes.image2.url}} class="d-block w-100" alt="...">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src={{causes.image3.url}} class="d-block w-100" alt="...">
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div>
+
+                                <div class="content-wrap-single">
+                                    <div class="featured-cause-timer">
+                                        <h3>₦{{causes.initial_price}} raised of ₦{{causes.target_price}}</h3>
+                                        <div class="skillbar-wrap">
+                                                
+                                            <div class="skillbar" data-percent="{{causes.skill}}%">
+                                                
+                                                <div class="skillbar-bar"></div>
+                                            </div>   
+                                            <span class="tag">{{causes.category}}</span>          
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="content-wrap-single border-top">
+                                    
+                                    <p>{{causes.description}}</p>
+                                    
+
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                        Donate
+                                    </button>
+
+                                    
+
+                                    
+                                </div>
+
+                                
+
+                            </div>
+                            <!-- Causes Single Wrap -->
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- About Us Style Start -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Donation</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <h3>Account Name: Abubakar Abubakar </h3>
+                <h3>Bank Name: Access Bank </h3>
+                <h4>Account Number: 1223118169 </h4>
+                
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Callout Style Start -->
+        <section class="wide-tb-150 bg-scroll bg-img-6 pos-rel callout-style-1">
+            <div class="bg-overlay blue opacity-80"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h1 class="heading-main light-mode">
+                            <small>Help Other People</small>
+                            We Dream to Create A Bright Future Of The Underprivileged Children
+                        </h1>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- Callout Style End -->
+
+        
+        
+           
+{% endblock content %}

@@ -1,0 +1,123 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Page Breadcrumbs Start -->
+    <section class="breadcrumbs-page-wrap">
+        <div class="bg-fixed pos-rel breadcrumbs-page">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <nav aria-label="breadcrumb" class="breadcrumb-wrap">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                    </ol>
+                </nav>  
+            </div>
+        </div>
+    </section>
+    <!-- Page Breadcrumbs End -->
+    
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+        {% if messages %}
+        <br>
+      <div class="messages">
+         {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+               <i class="fa-solid fa-thumbs-up"></i> {{ message }}
+            </div>
+         {% endfor %}
+      </div>
+   {% endif %}
+        <!-- Contact Us Style Start -->
+        <section class="wide-tb-100 pb-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-12">
+                        <h1 class="heading-main">
+                            <small>Get In Touch</small>
+                            
+                        </h1>
+
+                        
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-lg-8 col-md-12 order-lg-last">
+                      
+                           
+                            <form action="{% url 'contact' %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6 mb-0">
+                                        <div class="form-group">
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="First Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-0">
+                                        <div class="form-group">
+                                            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-0">
+                                        <div class="form-group">
+                                            <input type="text" name="email" id="email" class="form-control" placeholder="Your Email">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-0">
+                                        <div class="form-group">
+                                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Phone Number">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-0">
+                                        <div class="form-group">
+                                            <textarea name="comment" id="comment" class="form-control" rows="6" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary text-nowrap">Send Message</button>
+                                    </div>
+                                </div>
+                             
+                            </form>
+                        
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                       
+
+                        <!-- Icon Boxes Style -->
+                        <div class="icon-box-4 bg-green mb-4">
+                            <i data-feather="phone"></i>
+                            <h3>Phone Number</h3>
+                            <div>+234 814 989 9915</div>
+                        </div>
+                        <!-- Icon Boxes Style -->
+
+                        <!-- Icon Boxes Style -->
+                        <div class="icon-box-4 bg-gray mb-4">
+                            <i data-feather="mail"></i>
+                            <h3>Email Address</h3>
+                            <div><a href="https://mail.google.com/mail/?view=cm&fs=1&to=passifoundation@gmail.com">passifoundation@gmail.com</a></div>
+                            
+                        </div>
+                        <!-- Icon Boxes Style -->
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+        <br>
+
+        
+        <!-- Contact Us Style Start -->
+
+
+        
+{% endblock content %}

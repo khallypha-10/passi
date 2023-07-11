@@ -1,0 +1,65 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="wide-tb-100">
+    <div class="container">
+        {% if searched %}
+        <h1 class="heading-main">
+            
+            You searched for "{{searched}}"
+        </h1>
+        <div class="row">                 
+            {% for cause in causes %}   
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <!-- Causes Wrap -->
+                <div class="causes-wrap">
+                    <div class="img-wrap">
+                        <a href="{% url 'causes-single' cause.slug %}"><img src={{cause.image.url}} alt=""></a>
+                        <div class="raised-progress">
+                            <div class="skillbar-wrap">
+                                <div class="clearfix">
+                                    ${{cause.initial_price}} raised of ${{cause.target_price}}
+                                </div>
+                                <div class="skillbar-wrap">
+                                        
+                                    <div class="skillbar" data-percent="{{cause.skill}}%">
+                                        
+                                        <div class="skillbar-bar"></div>
+                                    </div>             
+                                </div>           
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-wrap">
+                        <span class="tag">{{cause.category}}</span>
+                        <h3><a href="{% url 'causes-single' cause.slug%}">{{cause.name}}</a></h3>
+                        <p>{{cause.description|truncatewords:15}}</p>
+                        {% if cause.initial_price != cause.target_price %}
+                        <div class="btn-wrap">
+                            <a class="btn-primary btn" href="causes-list.html">Donate Now</a>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+                <!-- Causes Wrap -->
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+    {% else %}
+        <h1 class="heading-main">
+                    
+            You didn't search for anything
+        </h1>
+
+{% endif %}
+</section>
+
+
+{% endblock content %}

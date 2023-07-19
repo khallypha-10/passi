@@ -11,19 +11,27 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
+
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = 'django-insecure-c!wbsq8w(93@*^cq6u&q75_=b@1c4b=ux5(hk0q4cb+qtt(^x!'
+SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -81,13 +89,17 @@ WSGI_APPLICATION = 'passi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'passi',
+        'USER': 'passiff',
+        'PASSWORD': 'Passipcdf$',
+        'HOST': 'passi.ce7bdsimpqxt.eu-north-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
-PAYSTACK_SECRET_KEY = "sk_test_e3a0e8c8bc112acd10feeafab107c4e1f7432e9d"
-PAYSTACK_PUBLIC_KEY= "pk_test_245070d35345896816d5f999fe01cc9261d8afc5"
+
+
 
 
 # Password validation
@@ -133,3 +145,7 @@ MEDIA_ROOT= 'media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+PAYSTACK_SECRET_KEY = env('PAYSTACK_SECRET_KEY')
+PAYSTACK_PUBLIC_KEY= env('PAYSTACK_PUBLIC_KEY')

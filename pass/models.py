@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.text import slugify
-from django_resized import ResizedImageField
 from django.contrib.auth.models import User
 import secrets
 from .paystack import Paystack
@@ -41,7 +40,7 @@ class Cause(models.Model):
     location = models.CharField(max_length=50)
     date = models.DateField(auto_now_add=False)
     description = models.TextField()
-    image = ResizedImageField(upload_to='media', size=[500, 393], crop=['middle', 'center'])
+    image = models.ImageField(upload_to='media')
     image2 = models.ImageField(upload_to='media', blank = True, null = True)
     image3 = models.ImageField(upload_to='media', blank = True, null = True)
     initial_price = models.PositiveIntegerField()

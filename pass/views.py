@@ -78,11 +78,12 @@ def search(request):
 
 
 def initiate_payment(request, slug):
+    cause = Cause.objects.get(slug=slug)
     if request.method == "POST":
         amount = request.POST['amount']
         email = request.POST['email']
 
-        cause = Cause.objects.get(slug=slug)
+        
 
         pk = settings.PAYSTACK_PUBLIC_KEY
 
@@ -96,7 +97,7 @@ def initiate_payment(request, slug):
             'field_values': request.POST,
             'paystack_pub_key': pk,
             'amount_value': payment.amount_value(),
-            'causes': cause,
+            'cause': cause,
         }
         return render(request, 'make_payment.html', context)
 

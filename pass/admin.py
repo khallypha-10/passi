@@ -27,4 +27,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display=['user', 'amount', 'ref']
+    list_display=['amount', 'ref']

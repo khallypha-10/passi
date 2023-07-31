@@ -291,7 +291,7 @@
                                 <h3><a href="{% url 'causes-single' cause.slug %}">{{cause.name|capfirst}}</a></h3>
                                 <p>{{cause.description|truncatewords:15}}</p>
                                 {% if cause.initial_price != cause.target_price %}
-                                <a  href="{% url 'initiate_payment' %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                <a  href="{% url 'initiate_payment' cause.slug %}"><button type="button" class="btn btn-primary" >Donate</button></a>
                                     
                 
                                 {% endif %}

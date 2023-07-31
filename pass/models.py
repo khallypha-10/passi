@@ -70,7 +70,6 @@ class Contact(models.Model):
     message = models.TextField()
 
 class Payment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     amount = models.PositiveIntegerField()
     ref = models.CharField(max_length=200)
     email = models.EmailField()

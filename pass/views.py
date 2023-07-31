@@ -75,24 +75,28 @@ def search(request):
 
     return render(request, "search.html", {"searched": searched, "causes": causes })
     
-def donation(request):
-    return render(request, "donation-page.html")
 
-def initiate_payment(request):
+
+def initiate_payment(request, slug):
     if request.method == "POST":
         amount = request.POST['amount']
         email = request.POST['email']
 
+        cause = Cause.objects.get(slug=slug)
+
         pk = settings.PAYSTACK_PUBLIC_KEY
 
-        payment = Payment.objects.create(amount=amount, email=email, user=request.user)
+        payment = Payment.objects.create(amount=amount, email=email)
         payment.save()
+
+        price = Cause.objects.create(initial_price=amount)
 
         context = {
             'payment': payment,
             'field_values': request.POST,
             'paystack_pub_key': pk,
             'amount_value': payment.amount_value(),
+            'causes': cause,
         }
         return render(request, 'make_payment.html', context)
 

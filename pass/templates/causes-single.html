@@ -17,7 +17,7 @@
     {% block content %}
 
     <!-- Page Breadcrumbs Start -->
-    <section class="breadcrumbs-page-wrap">
+    <section class="breadcrumbs-page-wrap" style="background-image: url(static/images/IMG_8731.Jpg);">
         <div class="bg-fixed pos-rel breadcrumbs-page">
             <div class="container">
                 <h1>{{causes.name}}</h1>
@@ -90,7 +90,7 @@
                                     <p>{{causes.description}}</p>
                                     
 
-                                    <a  href="{% url 'initiate_payment' %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                    <a  href="{% url 'initiate_payment' cause.slug %}"><button type="button" class="btn btn-primary" >Donate</button></a>
                                     
 
                                     
@@ -111,26 +111,7 @@
             </div>
         </section>
         <!-- About Us Style Start -->
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Donation</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <h3>Account Name: Abubakar Abubakar </h3>
-                <h3>Bank Name: Access Bank </h3>
-                <h4>Account Number: 1223118169 </h4>
-                
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                
-                </div>
-            </div>
-            </div>
-        </div>
+        
         <!-- Callout Style Start -->
         <section class="wide-tb-150 bg-scroll bg-img-6 pos-rel callout-style-1">
             <div class="bg-overlay blue opacity-80"></div>

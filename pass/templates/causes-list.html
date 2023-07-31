@@ -6,7 +6,7 @@
     
 
     <!-- Page Breadcrumbs Start -->
-    <section class="breadcrumbs-page-wrap">
+    <section class="breadcrumbs-page-wrap" style="background-image: url(static/images/IMG_8731.Jpg);">
         <div class="bg-fixed pos-rel breadcrumbs-page">
             <div class="container">
                 <h1>Explore Causes</h1>
@@ -65,7 +65,7 @@
                                 {% if cause.initial_price != cause.target_price %}
                                 
                                     
-                                        <a  href="{% url 'initiate_payment' %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                        <a  href="{% url 'initiate_payment' cause.slug %}"><button type="button" class="btn btn-primary" >Donate</button></a>
                                     
                                 
                                 {% endif %}

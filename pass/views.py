@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . models import Cause, Event, Member, Contact, Payment
+from . models import Cause, Event, Member, Contact
 from django.conf import settings
 import datetime
 from django.contrib import messages
@@ -104,11 +104,3 @@ def initiate_payment(request, slug):
     return render(request, 'payment.html')
 
 
-def verify_payment(request, ref):
-    payment = Payment.objects.get(ref=ref)
-    verified = payment.verify_payment()
-
-    if verified:
-        print(request.user, " funded wallet successfully")
-        return render(request, "success.html")
-    return render(request, "success.html")

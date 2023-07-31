@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Cause, Event, Member, Contact, Payment
+from . models import Cause, Event, Member, Contact
 
 # Register your models here.
 
@@ -25,6 +25,4 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'phone', 'email', 'message']
     search_fields = ['first_name', 'last_name']
 
-@admin.register(Payment)
-class PaymentAdmin(admin.ModelAdmin):
-    list_display=['amount', 'ref']
+

@@ -291,7 +291,27 @@
                                 <h3><a href="{% url 'causes-single' cause.slug %}">{{cause.name|capfirst}}</a></h3>
                                 <p>{{cause.description|truncatewords:15}}</p>
                                 {% if cause.initial_price != cause.target_price %}
-                                <a  href="{% url 'initiate_payment' cause.slug %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Donate
+                                </button>
+
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="exampleModalLabel">Passi Donation</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          ...
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                     
                 
                                 {% endif %}
@@ -310,7 +330,7 @@
             </div>
         </section>
         <!-- Causes Grid Start -->
-       
+        
         <!-- Callout Style Start -->
         <section class="wide-tb-100 bg-scroll bg-img-6 pos-rel callout-style-1">
             <div class="bg-overlay blue opacity-80"></div>

@@ -11,8 +11,6 @@ urlpatterns = [
     path('contact-us', views.contact, name="contact"),
     path('search', views.search, name="search"),
     path('events', views.events, name="events"),
-    path('initiate-payment/<slug>', views.initiate_payment, name='initiate_payment'),
-    path('verify-payment/<str:ref>/', views.verify_payment, name='verify_payment'),
     path('event-details/<slug>', views.event, name="event"),
 ]
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

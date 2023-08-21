@@ -118,7 +118,9 @@ body {
 }
 img{
     max-width: 100%;
+    max-height: 350px;
 }
+
 
 header .container{
     max-width: 1350px;

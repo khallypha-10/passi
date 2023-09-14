@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-
+from django_resized import ResizedImageField
 
 
 # Create your models here.
@@ -8,7 +8,7 @@ from django.utils.text import slugify
 class Member(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=70)
-    image = models.ImageField(upload_to='profile')
+    image = ResizedImageField(size=[200, 100], quality=100, crop=['middle', 'center'], upload_to='profile')
     def __str__(self):
         return self.name
     
@@ -40,9 +40,9 @@ class Cause(models.Model):
     location = models.CharField(max_length=50)
     date = models.DateField(auto_now_add=False)
     description = models.TextField()
-    image = models.ImageField(upload_to='media')
-    image2 = models.ImageField(upload_to='media', blank = True, null = True)
-    image3 = models.ImageField(upload_to='media', blank = True, null = True)
+    image = ResizedImageField(size=[400, 300], quality=100, crop=['middle', 'center'], upload_to='media', blank = True, null = True)
+    image2 = ResizedImageField(size=[400, 300], quality=100, crop=['middle', 'center'], upload_to='media', blank = True, null = True)
+    image3 = ResizedImageField(size=[400, 300],quality=100, crop=['middle', 'center'], upload_to='media', blank = True, null = True)
     initial_price = models.PositiveIntegerField()
     target_price = models.PositiveIntegerField()
     

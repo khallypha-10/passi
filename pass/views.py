@@ -77,30 +77,3 @@ def search(request):
     
 
 
-def initiate_payment(request, slug):
-    cause = Cause.objects.get(slug=slug)
-    if request.method == "POST":
-        amount = request.POST['amount']
-        email = request.POST['email']
-
-        
-
-        pk = settings.PAYSTACK_PUBLIC_KEY
-
-        payment = Payment.objects.create(amount=amount, email=email)
-        payment.save()
-
-        price = Cause.objects.create(initial_price=amount)
-
-        context = {
-            'payment': payment,
-            'field_values': request.POST,
-            'paystack_pub_key': pk,
-            'amount_value': payment.amount_value(),
-            'cause': cause,
-        }
-        return render(request, 'make_payment.html', context)
-
-    return render(request, 'payment.html')
-
-

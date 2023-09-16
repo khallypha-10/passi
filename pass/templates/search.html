@@ -3,83 +3,108 @@
 {% block content %}
 
 
-<section class="wide-tb-100">
-    <div class="container">
-        {% if searched %}
-        <h1 class="heading-main">
+    <!-- Main Body Content Start -->
+    <main id="body-content">
+
+        <!-- Causes Grid Start -->
+        
+        <section class="wide-tb-100">
+            <div class="container">
+                <h1 class="heading-main">
+                    {% if searched %}
+                        <h1 class="heading-main">
             
-            You searched for "{{searched}}"
-        </h1>
-        <div class="row">                 
-            {% for cause in causes %}   
-            <div class="col-sm-12 col-md-6 col-lg-4">
-                <!-- Causes Wrap -->
-                <div class="causes-wrap">
-                    <div class="img-wrap">
-                        <a href="{% url 'causes-single' cause.slug %}"><img src={{cause.image.url}} alt=""></a>
-                        <div class="raised-progress">
-                            <div class="skillbar-wrap">
-                                <div class="clearfix">
-                                    ₦{{cause.initial_price}} raised of ₦{{cause.target_price}}
-                                </div>
-                                <div class="skillbar-wrap">
-                                        
-                                    <div class="skillbar" data-percent="{{cause.skill}}%">
-                                        
-                                        <div class="skillbar-bar"></div>
-                                    </div>             
-                                </div>           
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="content-wrap">
-                        <span class="tag">{{cause.category}}</span>
-                        <h3><a href="{% url 'causes-single' cause.slug%}">{{cause.name}}</a></h3>
-                        <p>{{cause.description|truncatewords:15}}</p>
-                        {% if cause.initial_price != cause.target_price %}
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Donate
-                        </button>
-
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Passi Donation</h1>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Passi Community Development Foundation 
-                                    Jaiz Bank Plc 
-                                    0015334943
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                                    
-                        {% endif %}
-                    </div>
-
-                </div>
-                <!-- Causes Wrap -->
-            </div>
-            {% endfor %}
-            
-
-        </div>
-    </div>
-    {% else %}
-        <h1 class="heading-main">
+                        You searched for "{{searched}}"
+                </h1>
+                
+                <div class="row">     
                     
-            You didn't search for anything
-        </h1>
+                    {% for cause in causes %}   
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <!-- Causes Wrap -->
+                        <div class="causes-wrap">
+                            <div class="img-wrap">
+                                <a href="{% url 'causes-single' cause.slug %}"><img src={{cause.image.url}} alt=""></a>
+                                <div class="raised-progress">
+                                    <div class="skillbar-wrap">
+                                        <div class="clearfix">
+                                            ₦{{cause.initial_price}} raised of ₦{{cause.target_price}}
+                                        </div>
+                                        <div class="skillbar-wrap">
+                                                
+                                            <div class="skillbar" data-percent="{{cause.skill}}%">
+                                                
+                                                <div class="skillbar-bar"></div>
+                                            </div>             
+                                        </div>           
+                                    </div>
+                                </div>
+                            </div>
 
-{% endif %}
-</section>
+                            <div class="content-wrap">
+                                <span class="tag">{{cause.category}}</span>
+                                <h3><a href="{% url 'causes-single' cause.slug%}">{{cause.name|title}}</a></h3>
+                                <p>{{cause.description|truncatewords:15}}</p>
+                                {% if cause.initial_price != cause.target_price %}
+                                
+                                    
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Donate
+                                </button>
 
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h1 class="modal-title fs-5" id="exampleModalLabel">Passi Donation</h1>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Passi Community Development Foundation 
+                                            Jaiz Bank Plc 
+                                            0015334943
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                    
+                                
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        <!-- Causes Wrap -->
+                    </div>
+                    {% endfor %}
+                    
+                    
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center"> {% if causes.has_previous %}
+                      <li class="page-item"><a class="page-link" href="?page={{causes.previous_page_number}}">Previous</a></li>{% endif %}
+                      {% for page in causes.paginator.page_range %}
+                      <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+                      {% endfor %}
+                      {% if causes.has_next %}
+                      <li class="page-item"><a class="page-link" href="?page={{causes.next_page_number}}">Next</a></li>{% endif %}
+                    </ul>
+                </nav>
+            </div>
+            
+        </section>
+        <!-- Causes Grid Start -->
+
+        
+
+     
+
+        
+        
+           
+    </main>
 
 {% endblock content %}

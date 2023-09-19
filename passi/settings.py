@@ -30,7 +30,7 @@ SECRET_KEY = ''
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['13.50.16.100', '127.0.0.1']
+ALLOWED_HOSTS = ['16.171.136.172', '127.0.0.1']
 
 # Application definition
 
@@ -85,7 +85,11 @@ WSGI_APPLICATION = 'passi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-      
+        'NAME': 'passiff',
+        'USER': 'passiff',
+        'PASSWORD': 'Passipcdf$',
+        'HOST': 'passiff.ce7bdsimpqxt.eu-north-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -140,3 +144,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+AWS_ACCESS_KEY_ID = 'AKIA4R3UTL2TKJE6BBIP'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME ='passifbucket'
+AWS_S3_SIGNATURE_NAME = 's3v4'
+AWS_S3_REGION_NAME = 'eu-north-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

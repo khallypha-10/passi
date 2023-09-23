@@ -8,7 +8,7 @@ from django_resized import ResizedImageField
 class Member(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=70)
-    image = ResizedImageField(size=[200, 100], quality=100, crop=['middle', 'center'], upload_to='profile')
+    image = ResizedImageField(size=[200, 350], quality=100, crop=['middle', 'center'], upload_to='profile')
     def __str__(self):
         return self.name
     

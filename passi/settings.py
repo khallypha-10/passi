@@ -30,9 +30,9 @@ SECRET_KEY = 'c!wbsq8w(93@*^cq6u&q75_=b@1c4b=ux5(hk0q4cb+qtt(^x!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 CSRF_TRUSTED_ORIGINS = [
-    'https://www.passifoundation.com/', 'http://www.passifoundation.com', 'http://passifoundation.com'
+    'https://www.passifoundation.com', 'http://www.passifoundation.com', 'http://passifoundation.com'
 ]
-ALLOWED_HOSTS = ['51.20.75.240', '127.0.0.1', 'www.passifoundation.com', 'passifoundation.com', 'https://www.passifoundation.com/']
+ALLOWED_HOSTS = ['51.20.75.240', '127.0.0.1', 'www.passifoundation.com', 'passifoundation.com', 'https://www.passifoundation.com']
 
 # Application definition
 

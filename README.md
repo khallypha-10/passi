@@ -1,4 +1,4 @@
-This is an NGO website for charity. It features "causes"I.e. previous donations and help given. There are also events, like going to a community to provide food or helping with one thing or another. It also features online payment using paystack. Paystack offers transactions using Nigerian accounts, hence the reason for its usage. As usual there are about us and contact us pages. 
+This is an NGO website for charity. It features "causes"I.e. previous donations and help given. There are also events, like going to a community to provide food or helping with one thing or another. It also features online payment using paystack. Paystack offers transactions using Nigerian accounts, hence the reason for its usage. As usual there are about us and contact us pages. You can check out the website on https://www.passifoundation.com/
 
 ![home](https://github.com/khallypha-10/passi/assets/113286546/c1e2e5c7-f932-45a3-bb9a-7d9f02c19a2a)
 

@@ -80,6 +80,9 @@ WSGI_APPLICATION = 'passi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.passifoundation.com/'
+]
 
 
 DATABASES = {

@@ -637,6 +637,7 @@ a:focus {
 /*------------------------------------------*/
 .breadcrumbs-page-wrap{
     position: relative;
+    background: url(../images/IMG_8731.Jpg) no-repeat center top / cover;
 }
 .breadcrumbs-page-wrap:before{
     content: "";

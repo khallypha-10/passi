@@ -650,7 +650,7 @@ a:focus {
     z-index: -99;
 }
 .breadcrumbs-page {
-    background: url(../assets/images/IMG_8731.Jpg) no-repeat center top / cover;
+    background: url(../images/IMG_8731.Jpg) no-repeat center top / cover;
     background-repeat: no-repeat;
     background-position: center !important;
     max-width: 100%;

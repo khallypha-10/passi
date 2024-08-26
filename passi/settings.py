@@ -11,28 +11,31 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = ''
+SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-CSRF_TRUSTED_ORIGINS = [
-    'https://www.passifoundation.com','https://passifoundation.com', 'http://www.passifoundation.com', 'http://passifoundation.com'
-]
-ALLOWED_HOSTS = ['51.20.75.240', '127.0.0.1', 'www.passifoundation.com', 'passifoundation.com', 'https://www.passifoundation.com', 'https://passifoundation.com']
+DEBUG = True
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pass',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -88,9 +92,15 @@ WSGI_APPLICATION = 'passi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-  
+        'ENGINE': env('ENGINE'),
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
+    }
 }
+
 
 
 
@@ -140,6 +150,37 @@ MEDIA_ROOT= 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+PAYSTACK_SECRET_KEY = env('PAYSTACK_SECRET_KEY')
+PAYSTACK_PUBLIC_KEY = env('PAYSTACK_PUBLIC_KEY')
+
+
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME =env('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_SIGNATURE_NAME = env('AWS_S3_SIGNATURE_NAME')
+AWS_S3_REGION_NAME = env('AWS_S3_REGION_NAME')
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+AWS_SES_REGION_NAME = env('AWS_SES_REGION_NAME') 
+AWS_SES_REGION_ENDPOINT = env('AWS_SES_REGION_ENDPOINT') 
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+AWS_SES_REGION_NAME = env('AWS_SES_REGION_NAME') 
+AWS_SES_REGION_ENDPOINT = env('AWS_SES_REGION_ENDPOINT') 
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 
 
+
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+
+    "staticfiles": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+}

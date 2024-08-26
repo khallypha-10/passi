@@ -1,7 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 from django_resized import ResizedImageField
-
+from .paystack  import  Paystack
+import secrets
 
 # Create your models here.
 
@@ -64,9 +65,50 @@ class Cause(models.Model):
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=70)
-    last_name = models.CharField(max_length=70)
+    subject = models.CharField(max_length=70)
     email = models.EmailField(max_length=254)
     phone = models.BigIntegerField()
     message = models.TextField()
 
    
+class Payments(models.Model):
+    cause = models.ForeignKey("Cause", on_delete=models.SET_NULL, blank=True, null=True)
+    name = models.CharField(max_length=70)    
+    amount = models.PositiveIntegerField()
+    ref = models.CharField(max_length=200)
+    email = models.EmailField()
+    verified = models.BooleanField(default=False)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+
+    class Meta:
+        ordering = ('-date_created',)
+
+    def __str__(self):
+        return f"Payment: ₦{self.amount} | by {self.name} {self.email}"
+
+    def amount_value(self):
+        return int(self.amount) * 100
+
+    def verify_payment(self):
+        paystack = Paystack()
+        status, result = paystack.verify_payment(self.ref, self.amount)
+        if status:
+            if result['amount'] / 100 == self.amount:
+                self.verified = True
+            self.save()
+        if self.verified:
+            return True
+        return False
+
+    def save(self, *args, **kwargs):
+        while not self.ref:
+            ref = secrets.token_urlsafe(50)
+            object_with_similar_ref = Payments.objects.filter(ref=ref)
+            if not object_with_similar_ref:
+                self.ref = ref
+
+        super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = 'Payments'

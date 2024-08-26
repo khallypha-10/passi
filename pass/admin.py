@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Cause, Event, Member, Contact
+from . models import Cause, Event, Member, Contact, Payments
 
 # Register your models here.
 
@@ -22,7 +22,13 @@ class MemberAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'phone', 'email', 'message']
+    list_display = ['first_name', 'subject', 'phone', 'email', 'message']
     search_fields = ['first_name', 'last_name']
 
+
+@admin.register(Payments)
+class  PaymentsAdmin(admin.ModelAdmin):
+    list_display  = ["name", "ref", 'amount', "verified", "date_created"]
+    list_filter = ["date_created", "verified"]
+    search_fields = ["name", "ref", "cause__title" ]
 

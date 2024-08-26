@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from . models import Cause, Event, Member, Contact
+from . models import Cause, Event, Member, Contact, Payments
 from django.conf import settings
 import datetime
 from django.contrib import messages
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.core.mail import send_mail, BadHeaderError
 
 # Create your views here.
 def home(request):
@@ -43,12 +44,25 @@ def about(request):
 def contact(request):
     if request.method == 'POST':
         first_name = request.POST['name']
-        last_name = request.POST['lastname']
+        subject = request.POST['subject']
         phone = request.POST['phone']
         email = request.POST['email']
         message = request.POST['comment']
-        contact = Contact(first_name=first_name, last_name=last_name, phone=phone, email=email, message=message)
+        contact = Contact(first_name=first_name, subject=subject, phone=phone, email=email, message=message)
         contact.save()
+        subject = subject
+        body = {
+		    'first_name': first_name, 
+            'phone': phone,
+			'email': email, 
+			'message':message, 
+            }
+        message = "\n".join(body.values()) 
+
+        try:
+            send_mail(subject, message, 'passifoundation@gmail.com', ['passifoundation@gmail.com']) 
+        except BadHeaderError: #add this
+                return HttpResponse('Invalid header found.')
         messages.success(request, 'Your message was received. We will get back to you shortly')
     return render(request, "contact-us.html")
 
@@ -77,3 +91,35 @@ def search(request):
     
 
 
+def initiate_payment(request, slug):
+    cause = Cause.objects.get(slug=slug)
+    if request.method == "POST":
+        amount = request.POST['amount']
+        email = request.POST['email']
+        name = request.POST['name']
+
+        pk = settings.PAYSTACK_PUBLIC_KEY
+
+        payment = Payments.objects.create(amount=amount, email=email, cause=cause, name=name)
+        payment.save()
+
+        context = {
+            'payment': payment,
+            'field_values': request.POST,
+            'paystack_pub_key': pk,
+            'amount_value': payment.amount_value(),
+        }
+        return render(request, 'make_payment.html', context)
+
+    return render(request, 'payment.html')
+
+def verify_payment(request, ref):
+    payment = Payments.objects.get(ref=ref)
+    verified = payment.verify_payment()
+    amount_raised = payment.cause.initial_price
+    if verified:
+        cause = payment.cause
+        cause.initial_price += payment.amount  
+        cause.save()
+        return render(request, "success.html")
+    return render(request, "success.html", {"payment": payment})

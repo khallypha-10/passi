@@ -2,6 +2,19 @@
 {% load static %}
 {% block content %}
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66cca16eea492f34bc0a47d3/1i67ld61f';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 <!-- Page loader Start -->
 <div id="pageloader">   
     <div class="loader-item">
@@ -291,31 +304,11 @@
                                 <h3><a href="{% url 'causes-single' cause.slug %}">{{cause.name|capfirst}}</a></h3>
                                 <p>{{cause.description|truncatewords:15}}</p>
                                 {% if cause.initial_price != cause.target_price %}
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Donate
-                                </button>
+                                
+                                    <a href="{% url 'initiate_payment' cause.slug %}"><button type="button" class="btn btn-primary" >Donate</button></a>
+                                
 
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <h1 class="modal-title fs-5" id="exampleModalLabel">Passi Donation</h1>
-                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Passi Community Development Foundation <br>
-                                            Jaiz Bank Plc 
-                                            0015334943
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                          
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                    
-                
+                                
                                 {% endif %}
                             </div>
 
@@ -452,7 +445,7 @@
                                         <ul class="list-unstyled icons-listing theme-orange mb-0">
                                             <li>We have helped fed hundreds of people across Northern Nigeria.</li>
                                             <li>We have delivered aid to children.</li>
-                                            <li>Our organization has helped prserve some artifacts.</li>
+                                            <li>Our organization has helped preserve some artifacts.</li>
                                             
                                         </ul>
                                     </div>

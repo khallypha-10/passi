@@ -12,6 +12,8 @@ urlpatterns = [
     path('search', views.search, name="search"),
     path('events', views.events, name="events"),
     path('event-details/<slug>', views.event, name="event"),
+    path('initiate-payment/<slug>', views.initiate_payment, name='initiate_payment'),
+    path('verify-payment/<str:ref>/', views.verify_payment, name='verify_payment'),
 ]
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_URL)

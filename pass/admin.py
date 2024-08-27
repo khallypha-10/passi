@@ -1,5 +1,5 @@
 from django.contrib import admin
-from . models import Cause, Event, Member, Contact, Payments
+from . models import Cause, Event, Member, Contact, Payments, Image
 
 # Register your models here.
 
@@ -32,3 +32,6 @@ class  PaymentsAdmin(admin.ModelAdmin):
     list_filter = ["date_created", "verified"]
     search_fields = ["name", "ref", "cause__title" ]
 
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    pass

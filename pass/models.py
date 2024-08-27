@@ -112,3 +112,10 @@ class Payments(models.Model):
 
     class Meta:
         verbose_name_plural = 'Payments'
+
+class Image(models.Model): 
+    image1 = ResizedImageField(size=[500, 400], quality=100, crop=['middle', 'center'], upload_to='images_carousel', blank = True, null = True)
+    image2 = ResizedImageField(size=[500, 400], quality=100, crop=['middle', 'center'], upload_to='images_carousel', blank = True, null = True)
+    image3 = ResizedImageField(size=[500, 400], quality=100, crop=['middle', 'center'], upload_to='images_carousel', blank = True, null = True)
+    image4 = ResizedImageField(size=[500, 400], quality=100, crop=['middle', 'center'], upload_to='images_carousel', blank = True, null = True)
+    image5 = ResizedImageField(size=[500, 400], quality=100, crop=['middle', 'center'], upload_to='images_carousel', blank = True, null = True)

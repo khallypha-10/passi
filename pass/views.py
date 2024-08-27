@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . models import Cause, Event, Member, Contact, Payments
+from . models import Cause, Event, Member, Contact, Payments, Image
 from django.conf import settings
 import datetime
 from django.contrib import messages
@@ -12,6 +12,7 @@ def home(request):
     causes = Cause.objects.all()[:20]
     causess = Cause.objects.all()[:3]
     profiles = Member.objects.all()
+    images = Image.objects.all()
     now = datetime.datetime.now()
     upcoming = Event.objects.all().last()
     total_causes = Cause.objects.all().count()
@@ -23,7 +24,7 @@ def home(request):
         total = total + amount
 
 
-    context = {"causes": causes,"causess": causess, "profiles": profiles, "upcoming": upcoming, "total": total,"now": now, "cause": total_causes, "people":people_helped}
+    context = {"images": images, "causes": causes,"causess": causess, "profiles": profiles, "upcoming": upcoming, "total": total,"now": now, "cause": total_causes, "people":people_helped}
     return render(request, "home.html", context)
 
 def single(request, slug):

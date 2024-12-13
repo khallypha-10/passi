@@ -14,7 +14,7 @@ def home(request):
     profiles = Member.objects.all()
     images = Image.objects.all()
     now = datetime.datetime.now()
-    upcoming = Event.objects.all().last()
+    upcoming = Event.objects.all().order_by('-id')[:1]
     total_causes = Cause.objects.all().count()
     people_helped = total_causes * 4000
    

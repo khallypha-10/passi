@@ -16,7 +16,7 @@ def home(request):
     now = datetime.datetime.now()
     upcoming = Event.objects.all().last()
     total_causes = Cause.objects.all().count()
-    people_helped = total_causes * 123
+    people_helped = total_causes * 4000
    
     total = 0
     for p in causes:

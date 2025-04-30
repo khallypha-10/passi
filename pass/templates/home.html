@@ -186,7 +186,9 @@
                         <!-- Causes Wrap -->
                         <div class="causes-wrap">
                             <div class="img-wrap">
+                                {% if cause.image %}
                                 <a href="{% url 'causes-single' cause.slug %}"><img src={{cause.image.url}} alt=""></a>
+                                {% endif %}
                                 <div class="raised-progress">
                                     <div class="skillbar-wrap">
                                         <div class="clearfix">

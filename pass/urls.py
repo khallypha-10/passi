@@ -8,6 +8,7 @@ urlpatterns = [
     path('cause/<slug>', views.single, name="causes-single"),
     path('all-causes/', views.all_causes, name="causes-list"),
     path('about-us', views.about, name="about"),
+    path('privacy-policy', views.privacy, name="privacy"),
     path('contact-us', views.contact, name="contact"),
     path('search', views.search, name="search"),
     path('events', views.events, name="events"),

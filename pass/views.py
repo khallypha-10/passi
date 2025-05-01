@@ -42,6 +42,9 @@ def all_causes(request):
 def about(request):
     return render(request, "about-us.html")
 
+def privacy(request):
+    return render(request, "privacy-policy.html")
+
 def contact(request):
     if request.method == 'POST':
         first_name = request.POST['name']

@@ -42,8 +42,6 @@ class Cause(models.Model):
     date = models.DateField(auto_now_add=False)
     description = models.TextField()
     image = ResizedImageField(size=[400, 300], quality=100, crop=['middle', 'center'], upload_to='media', blank = True, null = True)
-    image2 = ResizedImageField(size=[400, 300], quality=100, crop=['middle', 'center'], upload_to='media', blank = True, null = True)
-    image3 = ResizedImageField(size=[400, 300],quality=100, crop=['middle', 'center'], upload_to='media', blank = True, null = True)
     initial_price = models.PositiveIntegerField()
     target_price = models.PositiveIntegerField()
     

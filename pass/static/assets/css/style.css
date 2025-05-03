@@ -658,6 +658,10 @@ a:focus {
     position: relative;
     border-radius: 0;
 }
+.breadcrumbs-page {
+    border: 3px solid red !important; /* Debug border */
+    z-index: 9999 !important;
+}
 .breadcrumbs-page:before {
     position: absolute;
     content: "";

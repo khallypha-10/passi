@@ -649,18 +649,31 @@ a:focus {
     background: #FFF;
     z-index: -99;
 }
-.breadcrumbs-page {
-    background: url(https://pcdfbucket.s3.amazonaws.com/static/assets/images/IMG_8731.jpg) no-repeat center top / cover;
-    /* Remove duplicate properties */
-    max-width: 100%;
-    margin: 0 auto;
-    z-index: 2;
-    position: relative;
-    border-radius: 0;
+
+.breadcrumbs-page-wrap {
+    position: relative; /* Needed for child positioning */
+    height: 400px; /* Set explicit height (adjust as needed) */
+    overflow: hidden; /* Contain the background */
 }
+
 .breadcrumbs-page {
-    border: 3px solid red !important; /* Debug border */
-    z-index: 9999 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://pcdfbucket.s3.amazonaws.com/static/assets/images/IMG_8731.jpg') no-repeat center center/cover;
+    z-index: 1;
+}
+
+.breadcrumbs-page .container {
+    position: relative;
+    z-index: 2; /* Ensure content appears above background */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white; /* For better text visibility */
 }
 .breadcrumbs-page:before {
     position: absolute;

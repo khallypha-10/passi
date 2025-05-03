@@ -650,7 +650,7 @@ a:focus {
     z-index: -99;
 }
 .breadcrumbs-page {
-    background: url(s3://pcdfbucket/static/assets/images/IMG_8731.jpg) no-repeat center top / cover;
+    background: url(https://pcdfbucket.s3.amazonaws.com/static/assets/images/IMG_8731.jpg) no-repeat center top / cover;
     /* Remove duplicate properties */
     max-width: 100%;
     margin: 0 auto;
